@@ -84,15 +84,15 @@
 @media (max-width: 767px) {
     .centered-title {
         font-size: 2.5rem;
-        margin-top: -0px;
-        margin-bottom: 30px;
+        margin-top: 10px;
+        margin-bottom: 15px;
     }
 
     .hero-split {
         flex-direction: column;
         text-align: center;
-        gap: 40px;
-        margin-top: 20px;
+        gap: 25px;
+        margin-top: 50px;
     }
 
     .hero-left {
@@ -103,46 +103,41 @@
 
     .hero-left h2 {
         font-size: 2rem !important;
+        margin-bottom: 5px !important;
+    }
+
+    .hero-left p {
+        margin-bottom: 15px !important;
+        font-size: 1rem !important;
     }
 
     .hero-right {
         justify-content: center;
         width: 100%;
+        margin-top: -10px;
     }
 
     .hero-image-container {
         transform: none;
-        max-width: 280px;
+        max-width: 220px;
         margin: 0 auto;
     }
 
     .cta-buttons {
         justify-content: center;
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 12px;
+        margin-top: 10px !important;
     }
 
     .social-links {
         justify-content: center;
-        margin-top: 20px !important;
-    }
-}
-
-@keyframes drawStroke {
-    0% {
-        stroke-dasharray: 100;
-        stroke-dashoffset: 100;
-        opacity: 0;
+        margin-top: 0px !important;
+        margin-bottom: 10px !important;
     }
 
-    10% {
-        opacity: 1;
-    }
-
-    100% {
-        stroke-dasharray: 100;
-        stroke-dashoffset: 0;
-        opacity: 1;
+    .scroll-indicator {
+        display: none;
     }
 }
 
@@ -152,21 +147,15 @@
     justify-content: center;
     width: 45px;
     height: 45px;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
+    background: transparent;
+    border: none;
     border-radius: 12px;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .social-link:hover {
-    background: rgba(85, 139, 47, 0.1);
-    border-color: var(--accent);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.social-link:hover i svg * {
-    animation: drawStroke 0.8s ease-out forwards;
+    transform: translateY(-5px) scale(1.1);
+    background: transparent;
 }
 
 .social-link:hover i {
@@ -228,20 +217,6 @@
     background: var(--accent);
     border-radius: 50%;
     animation: scroll 2s infinite;
-}
-
-.petal-burst {
-    position: fixed;
-    pointer-events: none;
-    z-index: 1000;
-    width: 25px;
-    height: 25px;
-    background-image: url('../../assets/images/pink-petal.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.9;
-    filter: drop-shadow(0 0 5px rgba(255, 182, 193, 0.4));
-    mix-blend-mode: multiply;
 }
 
 .skill-icon-burst {

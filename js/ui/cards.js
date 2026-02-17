@@ -60,35 +60,60 @@ function initCardEffects() {
         });
     });
 
-    // Petal Burst Click Effect
+    // Water Splash Click Effect
     document.addEventListener('mousedown', (e) => {
-        const petalCount = 12;
-        for (let i = 0; i < petalCount; i++) {
-            const petal = document.createElement('div');
-            petal.className = 'petal-burst';
-            document.body.appendChild(petal);
+        // 1. Create Ripple
+        const ripple = document.createElement('div');
+        ripple.className = 'water-ripple';
+        document.body.appendChild(ripple);
 
-            const angle = (Math.PI * 2 / petalCount) * i + (Math.random() * 0.5);
-            const distance = 60 + Math.random() * 120;
+        gsap.set(ripple, {
+            left: e.clientX,
+            top: e.clientY,
+            width: 0,
+            height: 0,
+            opacity: 1
+        });
+
+        gsap.to(ripple, {
+            width: 200,
+            height: 200,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power1.out",
+            onComplete: () => ripple.remove()
+        });
+
+        // 2. Create Splash Droplets
+        const dropletCount = 8;
+        for (let i = 0; i < dropletCount; i++) {
+            const droplet = document.createElement('div');
+            droplet.className = 'water-splash';
+            document.body.appendChild(droplet);
+
+            const size = 6 + Math.random() * 12;
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 30 + Math.random() * 80;
             const destX = e.clientX + Math.cos(angle) * distance;
-            const destY = e.clientY + Math.sin(angle) * distance + (Math.random() * 50);
+            const destY = e.clientY + Math.sin(angle) * distance;
 
-            gsap.set(petal, {
-                x: e.clientX,
-                y: e.clientY,
-                scale: 0.3 + Math.random() * 0.7,
-                rotation: Math.random() * 360
+            gsap.set(droplet, {
+                left: e.clientX,
+                top: e.clientY,
+                width: size,
+                height: size,
+                opacity: 1
             });
 
-            gsap.to(petal, {
-                x: destX,
-                y: destY,
+            gsap.to(droplet, {
+                left: destX,
+                top: destY,
+                width: 0,
+                height: 0,
                 opacity: 0,
-                rotation: "+=" + (90 + Math.random() * 180),
-                scale: 0.1,
-                duration: 1.5 + Math.random(),
-                ease: "power1.out",
-                onComplete: () => petal.remove()
+                duration: 0.5 + Math.random() * 0.3,
+                ease: "power2.out",
+                onComplete: () => droplet.remove()
             });
         }
     });

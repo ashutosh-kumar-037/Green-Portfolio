@@ -45,3 +45,26 @@
 .edu-icon-pulse {
     animation: pulse-accent 1.5s infinite;
 }
+
+/* Water Splash Effect on Click */
+.water-splash {
+    position: fixed;
+    pointer-events: none;
+    z-index: 99999;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(129, 214, 69, 0.5) 40%, transparent 80%);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(85, 139, 47, 0.4);
+    will-change: transform, opacity, width, height, left, top;
+}
+
+.water-ripple {
+    position: fixed;
+    pointer-events: none;
+    z-index: 99998;
+    border: 3px solid rgba(129, 214, 69, 0.8);
+    background: rgba(129, 214, 69, 0.05);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    will-change: transform, opacity, width, height, left, top;
+}
