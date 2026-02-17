@@ -14,6 +14,10 @@ function initApp() {
     initContactForm();
     initLaptopBurst();
 
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+
     animate();
 }
 

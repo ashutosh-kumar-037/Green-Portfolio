@@ -91,6 +91,20 @@ function initProjects() {
     });
 
     container.innerHTML = html;
+
+    // Handle card flip on mobile/tablet (click instead of hover)
+    const cards = container.querySelectorAll('.project-card-container');
+    cards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            // If the click was on a link or inside project-actions, don't flip
+            if (e.target.closest('.project-actions') || e.target.closest('a')) {
+                return;
+            }
+
+            card.classList.toggle('is-flipped');
+        });
+    });
+
     if (window.lucide) {
         lucide.createIcons();
     }

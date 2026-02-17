@@ -121,6 +121,57 @@
         flex-wrap: wrap;
         gap: 15px;
     }
+
+    .social-links {
+        justify-content: center;
+        margin-top: 20px !important;
+    }
+}
+
+@keyframes drawStroke {
+    0% {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-link:hover {
+    background: rgba(85, 139, 47, 0.1);
+    border-color: var(--accent);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-link:hover i svg * {
+    animation: drawStroke 0.8s ease-out forwards;
+}
+
+.social-link:hover i {
+    color: var(--accent) !important;
+    opacity: 1 !important;
 }
 
 .hero-img {

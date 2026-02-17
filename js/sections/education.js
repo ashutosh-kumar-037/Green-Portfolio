@@ -55,7 +55,7 @@ function initEducation() {
                     <img src="assets/icons/${item.icon}" class="w-5 h-5 md:w-6 md:h-6 invert opacity-80" alt="${item.title}">
                 </div>
                 <div class="flex flex-col md:flex-row md:justify-between md:items-start w-full gap-1 md:gap-4">
-                    <h3 class="accent text-lg md:text-xl font-bold italic leading-tight">${item.title}</h3>
+                    <h3 class="accent text-lg md:text-xl font-bold leading-tight">${item.title}</h3>
                     <span class="text-text opacity-60 text-xs md:text-sm font-semibold whitespace-nowrap">${item.period}</span>
                 </div>
                 <p class="text-text opacity-80 text-sm md:text-base mt-2 md:mt-0">${item.institution}</p>

@@ -32,7 +32,13 @@
     cursor: pointer;
 }
 
-.project-card-container:hover .project-card-inner {
+@media (hover: hover) {
+    .project-card-container:hover .project-card-inner {
+        transform: rotateY(180deg);
+    }
+}
+
+.project-card-container.is-flipped .project-card-inner {
     transform: rotateY(180deg);
 }
 
@@ -51,7 +57,8 @@
 
 /* Front Face Styling */
 .project-card-front {
-    background: #140505; /* Deep base color */
+    background: #140505;
+    /* Deep base color */
     display: flex;
     flex-direction: column;
     backface-visibility: hidden;
