@@ -1,0 +1,49 @@
+.vine-overlay-svg {
+    position: absolute;
+    top: -10%;
+    left: 10%;
+    width: 80%;
+    height: 130%;
+    z-index: 60;
+    overflow: visible;
+    pointer-events: none;
+}
+
+@media (max-width: 1023px) {
+    .vine-overlay-svg {
+        height: 110%;
+        top: -5%;
+    }
+
+    #hanging-vine-left,
+    #hanging-vine-right {
+        display: none;
+    }
+}
+
+.vine-path {
+    fill: none;
+    stroke: #2d5a27;
+    stroke-width: 1.2;
+    stroke-linecap: round;
+    stroke-dasharray: none;
+    opacity: 0.9;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8));
+}
+
+.vine-path.shadow {
+    stroke: #1a3c1a;
+    stroke-width: 0.8;
+    opacity: 0.7;
+}
+
+.vine-flower {
+    fill: #ffa6c9;
+    filter: drop-shadow(0 0 2px #ffa6c9);
+    opacity: 0.95;
+}
+
+.vine-leaf {
+    fill: #2d5a27;
+    opacity: 0.9;
+}

@@ -1,0 +1,25 @@
+<svg class="vine-overlay-svg small-vines" viewBox="0 0 600 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Organic Horizontal Vines -->
+    <path class="vine-path shadow" d="M20,30 C150,50 350,10 580,30" />
+    <path class="vine-path" d="M20,60 Q300,20 580,65" />
+    <path class="vine-path" d="M30,80 C200,60 400,100 570,75" />
+    <!-- Organic Vertical Vines -->
+    <path class="vine-path" d="M180,-10 Q160,50 190,120" />
+    <path class="vine-path shadow" d="M420,-5 Q445,45 425,100" />
+
+    <circle class="vine-flower" cx="200" cy="55" r="3" />
+    <circle class="vine-flower" cx="400" cy="65" r="3" />
+    <circle class="vine-flower" cx="250" cy="20" r="2.5" />
+    <circle class="vine-flower" cx="480" cy="30" r="3" />
+    <circle class="vine-flower" cx="150" cy="80" r="2.5" />
+    <circle class="vine-flower" cx="530" cy="85" r="3" />
+
+    <ellipse class="vine-leaf" cx="120" cy="25" rx="6" ry="3" transform="rotate(-30 120 25)" />
+    <ellipse class="vine-leaf" cx="280" cy="70" rx="6" ry="3" transform="rotate(40 280 70)" />
+    <ellipse class="vine-leaf" cx="480" cy="40" rx="6" ry="3" transform="rotate(15 480 40)" />
+    <ellipse class="vine-leaf" cx="180" cy="50" rx="6" ry="3" transform="rotate(65 180 50)" />
+    <ellipse class="vine-leaf" cx="350" cy="25" rx="6" ry="3" transform="rotate(-10 350 25)" />
+    <ellipse class="vine-leaf" cx="440" cy="85" rx="6" ry="3" transform="rotate(-50 440 85)" />
+    <ellipse class="vine-leaf" cx="550" cy="55" rx="6" ry="3" transform="rotate(25 550 55)" />
+    <ellipse class="vine-leaf" cx="80" cy="45" rx="6" ry="3" transform="rotate(30 80 45)" />
+</svg>

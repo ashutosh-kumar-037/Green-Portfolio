@@ -1,0 +1,12 @@
+# System Files
+.DS_Store
+Thumbs.db
+
+# User Configurations (Sensitive)
+js/core/config.js
+
+# Node modules (if any)
+node_modules/
+
+# VS Code
+.vscode/

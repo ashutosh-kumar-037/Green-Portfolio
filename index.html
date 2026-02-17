@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Green Portfolio</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0a2e0a',
+                        secondary: '#1a3c1a',
+                        accent: '#558B2F',
+                        text: '#f0fff0',
+                        glass: 'rgba(255, 255, 255, 0.05)',
+                        'glass-border': 'rgba(255, 255, 255, 0.06)',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div id="bg-canvas-container"></div>
+
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <div class="logo">PORTFOLIO</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skill</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <div class="mobile-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skill</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="main-container">
+        <!-- Home Section -->
+        <section id="home" class="section">
+            <h1 class="fade-in centered-title title-vines-wrapper">
+                <span class="relative z-10">Nature In <span class="accent">Code</span></span>
+            </h1>
+            <div class="hero-split">
+                <div class="hero-left">
+                    <h2 class="fade-in text-[3rem] mt-[-10px] mb-[5px] text-text">
+                        Ashutosh <span class="accent">Kumar</span></h2>
+                    <h3 class="fade-in hero-role">Fullstack Developer</h3>
+                    <p class="fade-in text-[1.1rem] opacity-80 max-w-[500px] mb-[30px]">
+                        Building immersive web experiences with modern technologies. Specializing in Node.js, Python,
+                        and Creative Coding.
+                    </p>
+                    <div class="cta-buttons fade-in mt-[20px] flex gap-[20px] items-center">
+                        <a href="#projects" id="btn-projects"
+                            class="glass-card magnetic px-[30px] py-[15px] no-underline flex items-center gap-[10px] rounded-[50px] font-semibold text-accent w-fit">
+                            View My Work
+                        </a>
+                        <a href="assets/Ashutosh_Resume.pdf" id="btn-resume" target="_blank" download
+                            class="glass-card magnetic px-[30px] py-[15px] no-underline flex items-center gap-[10px] rounded-[50px] font-semibold text-text border border-accent/30 w-fit">
+                            <i data-lucide="download" class="w-[18px] h-[18px]"></i>
+                            Resume
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="hero-image-container relative flex justify-center items-center">
+                        <!-- Move icons up (smaller top %) and left (smaller left %) to hit the laptop screen -->
+                        <div id="laptop-burst-source" class="absolute top-[35%] left-[35%] w-1 h-1 pointer-events-none">
+                        </div>
+                        <img src="assets/images/avatar.png" alt="Ashutosh Avatar"
+                            class="hero-img w-full max-w-[650px] drop-shadow-[0_0_10px_rgba(85,139,47,0.4)]">
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title title-vines-wrapper">
+                <span class="relative z-10">The Roots</span>
+            </h2>
+            <div class="glass-card">
+                <p class="text-[1.1rem] leading-[1.8] mb-[20px]">
+                    I am a passionate <span class="accent">Fullstack Developer</span> who believes that software should
+                    be as
+                    harmonious as nature. My journey in the digital forest started with a simple curiosity about how
+                    bits and bytes can create immersive experiences.
+                </p>
+                <p class="text-[1.1rem] leading-[1.8] mb-[20px]">
+                    Like a forest ecosystem, my code is modular, interconnected, and constantly evolving. Specializing
+                    in <span class="accent">Node.js, Python, and Creative Coding</span>, I focus on building scalable
+                    backend
+                    architectures and visually stunning frontends that feel alive.
+                </p>
+                <p class="text-[1.1rem] leading-[1.8] mb-[20px]">
+                    With a deep fascination for the intersection of technology and elegance, I don't just write scripts;
+                    I design digital environments. My goal is to create applications that are not only efficient but
+                    also provide a soulful experience to every user.
+                </p>
+                <p class="text-[1.1rem] leading-[1.8]">
+                    <span class="accent">Academic Gap (1 Year):</span> Initially enrolled in B.Sc., then transitioned to
+                    BCA after developing a genuine interest in coding and computer applications.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2 class="section-title text-center w-full title-vines-wrapper">
+                <span class="relative z-10">Blooming Skills</span>
+            </h2>
+            <div class="glass-card flex flex-col gap-8">
+                <div class="flex flex-col md:flex-row gap-10 items-center">
+                    <!-- Left Side: Dynamic Skills List -->
+                    <div id="skills-container" class="w-full md:w-1/2 space-y-6 min-h-[400px]">
+                        <!-- Content will be injected by JS -->
+                    </div>
+
+                    <!-- Right Side: Radar Chart -->
+                    <div class="w-full md:w-1/2 flex justify-center items-center">
+                        <div class="w-[300px] h-[300px] relative">
+                            <canvas id="skillsRadarChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Buttons -->
+                <div class="flex flex-wrap justify-center gap-4 border-t border-glass-border pt-6">
+                    <button
+                        class="skill-tab active px-6 py-2 rounded-full border border-accent/30 text-accent font-bold transition-all hover:bg-accent/10 w-[150px]"
+                        data-category="frontend">Frontend</button>
+                    <button
+                        class="skill-tab px-6 py-2 rounded-full border border-glass-border text-text font-bold transition-all hover:border-accent/30 w-[150px]"
+                        data-category="backend">Backend</button>
+                    <button
+                        class="skill-tab px-6 py-2 rounded-full border border-glass-border text-text font-bold transition-all hover:border-accent/30 w-[150px]"
+                        data-category="languages">Languages</button>
+                    <button
+                        class="skill-tab px-6 py-2 rounded-full border border-glass-border text-text font-bold transition-all hover:border-accent/30 w-[150px]"
+                        data-category="databases">Databases</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <h2 class="section-title title-vines-wrapper">
+                <span class="relative z-10">Growth Rings</span>
+            </h2>
+            <div id="education-list" class="glass-card flex flex-col w-full">
+                <!-- Content injected by education.js -->
+            </div>
+        </section>
+
+        <!-- Project Section -->
+        <section id="projects" class="section">
+            <h2 class="section-title title-vines-wrapper">
+                <span class="relative z-10">Harvested Work</span>
+            </h2>
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+                <!-- Content injected by projects.js -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 class="section-title title-vines-wrapper">
+                <span class="relative z-10">Sow a Seed</span>
+            </h2>
+            <div
+                class="glass-card w-full max-w-[1000px] p-0 overflow-hidden flex flex-col md:flex-row shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+                <!-- Left Side: Personal Details -->
+                <div class="w-full md:w-1/2 p-10 bg-accent/5 flex flex-col justify-center">
+                    <h3 class="accent text-3xl font-bold mb-6">Let's Connect</h3>
+                    <p class="text-text/70 mb-10 text-lg leading-relaxed">
+                        I'm always open to discussing new projects, creative ideas, or being part of your visions. Feel
+                        free to reach out through any of these channels.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center border border-accent/20 group-hover:bg-accent group-hover:text-primary transition-all">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div>
+                                <p class="text-text/40 text-xs uppercase font-bold tracking-widest">Email</p>
+                                <p class="text-text font-semibold">ashu@example.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center border border-accent/20 group-hover:bg-accent group-hover:text-primary transition-all">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div>
+                                <p class="text-text/40 text-xs uppercase font-bold tracking-widest">Location</p>
+                                <p class="text-text font-semibold">Global / Remote</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center border border-accent/20 group-hover:bg-accent group-hover:text-primary transition-all">
+                                <i data-lucide="linkedin"></i>
+                            </div>
+                            <div>
+                                <p class="text-text/40 text-xs uppercase font-bold tracking-widest">LinkedIn</p>
+                                <p class="text-text font-semibold">linkedin.com/in/ashutosh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Contact Form -->
+                <div class="w-full md:w-1/2 p-10 bg-white/[0.02]">
+                    <form id="contact-form" class="flex flex-col gap-[20px]">
+                        <div class="relative group">
+                            <input type="text" name="name" id="contact-name" placeholder="Your Name" required
+                                class="p-[15px] bg-white/5 border border-glass-border rounded-[12px] text-white focus:outline-none focus:border-accent/40 w-full transition-all">
+                        </div>
+                        <div class="relative group">
+                            <input type="email" name="email" id="contact-email" placeholder="Your Email" required
+                                class="p-[15px] bg-white/5 border border-glass-border rounded-[12px] text-white focus:outline-none focus:border-accent/40 w-full transition-all">
+                        </div>
+                        <div class="relative group">
+                            <textarea name="message" id="contact-message" placeholder="Your Message" rows="5" required
+                                class="p-[15px] bg-white/5 border border-glass-border rounded-[12px] text-white focus:outline-none focus:border-accent/40 w-full transition-all resize-none"></textarea>
+                        </div>
+                        <button type="submit" id="contact-submit"
+                            class="p-[18px] bg-accent border-none rounded-[12px] text-primary font-extrabold cursor-pointer hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                            <span id="submit-text">SOW THE SEED</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Scripts -->
+        <script src="js/core/config.js"></script>
+        <script src="js/utils/svgLoader.js"></script>
+        <script src="js/three/scene.js"></script>
+        <script src="js/three/lights.js"></script>
+        <script src="js/three/fireflies.js"></script>
+        <script src="js/three/renderer.js"></script>
+        <script src="js/nature/vines.js"></script>
+        <script src="js/nature/flowers.js"></script>
+        <script src="js/nature/wind.js"></script>
+        <script src="js/ui/navbar.js"></script>
+        <script src="js/ui/scroll.js"></script>
+        <script src="js/ui/cards.js"></script>
+        <script src="js/sections/skills.js"></script>
+        <script src="js/sections/projects.js"></script>
+        <script src="js/sections/education.js"></script>
+        <script src="js/sections/contact.js"></script>
+        <script src="js/core/main.js"></script>
+        
+</body>
+
+</html>

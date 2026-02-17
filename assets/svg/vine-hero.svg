@@ -1,0 +1,85 @@
+<svg class="vine-overlay-svg" viewBox="0 0 800 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path class="vine-path" d="M80,0 Q90,40 85,75" />
+    <path class="vine-path shadow" d="M120,0 Q110,50 125,80" />
+    <path class="vine-path" d="M160,0 Q175,30 165,70" />
+    <path class="vine-path shadow" d="M220,-10 Q210,40 215,75" />
+    <path class="vine-path" d="M580,0 Q590,50 585,85" />
+    <path class="vine-path shadow" d="M620,0 Q635,30 625,70" />
+    <path class="vine-path" d="M660,0 Q650,60 665,85" />
+    <path class="vine-path shadow" d="M710,-10 Q725,50 715,80" />
+
+    <!-- Horizontal high-density wrapping lines -->
+    <path class="vine-path" d="M20,50 C120,30 220,70 320,50 C420,30 520,70 620,50 C720,30 820,70 920,50" />
+    <path class="vine-path shadow" d="M25,55 C125,75 225,35 325,55 C425,75 525,35 625,55 C725,75 825,35 925,55" />
+    <path class="vine-path" d="M30,65 C130,45 230,85 330,65 C430,45 530,85 630,65 C730,45 830,85 930,65" />
+    <path class="vine-path shadow" d="M35,40 C135,60 235,20 335,40 C435,60 535,20 635,40 C735,60 835,20 935,40" />
+    <path class="vine-path" d="M50,80 C150,100 250,60 350,80 C450,100 550,60 650,80 C750,100 850,60 950,80" />
+
+    <!-- Intricate loop-like wraps around characters (Overlaying) -->
+    <path class="vine-path" d="M180,45 Q200,25 220,45 T180,65 T220,85" />
+    <path class="vine-path shadow" d="M250,75 Q270,55 290,75 T250,95 T290,115" />
+    <path class="vine-path" d="M380,35 Q400,15 420,35 T380,55 T420,75" />
+    <path class="vine-path shadow" d="M500,65 Q520,45 540,65 T500,85 T540,105" />
+    <path class="vine-path" d="M450,25 Q470,5 490,25 T450,45" />
+    <path class="vine-path shadow" d="M120,30 Q140,10 160,30 T120,50" />
+    <path class="vine-path" d="M680,20 Q700,0 720,20 T680,40" />
+
+    <!-- Extra fine threads -->
+    <path class="vine-path shadow" d="M0,58 L800,58" style="stroke-width: 0.3; opacity: 0.3;" />
+    <path class="vine-path shadow" d="M0,68 L800,68" style="stroke-width: 0.3; opacity: 0.3;" />
+    <path class="vine-path shadow" d="M0,78 L800,78" style="stroke-width: 0.3; opacity: 0.3;" />
+
+    <!-- Long Vertical Vines connecting to Avatar -->
+    <path id="hanging-vine-left" class="vine-path" d="M650,50 Q640,300 655,340" />
+    <path id="hanging-vine-right" class="vine-path" d="M830,70 Q850,350 825,340" />
+
+    <!-- Rosy Pink Flowers (Balanced) -->
+    <circle class="vine-flower" cx="140" cy="35" r="3.5" />
+    <circle class="vine-flower" cx="320" cy="50" r="4" />
+    <circle class="vine-flower" cx="540" cy="75" r="3" />
+    <circle class="vine-flower" cx="720" cy="85" r="3" />
+    <circle class="vine-flower" cx="260" cy="95" r="3.5" />
+    <circle class="vine-flower" cx="75" cy="45" r="3" />
+    <circle class="vine-flower" cx="240" cy="55" r="4" />
+    <circle class="vine-flower" cx="440" cy="30" r="3" />
+    <circle class="vine-flower" cx="590" cy="45" r="3" />
+    <circle class="vine-flower" cx="760" cy="60" r="3.5" />
+    <circle class="vine-flower" cx="290" cy="35" r="4" />
+    <circle class="vine-flower" cx="335" cy="85" r="3.5" />
+
+    <!-- Green Leaves (Larger) -->
+    <ellipse class="vine-leaf" cx="85" cy="40" rx="7" ry="3.5" transform="rotate(30 85 40)" />
+    <ellipse class="vine-leaf" cx="165" cy="20" rx="7" ry="3.5" transform="rotate(-45 165 20)" />
+    <ellipse class="vine-leaf" cx="230" cy="80" rx="7" ry="3.5" transform="rotate(15 230 80)" />
+    <ellipse class="vine-leaf" cx="350" cy="60" rx="7" ry="3.5" transform="rotate(-20 350 60)" />
+    <ellipse class="vine-leaf" cx="430" cy="45" rx="7" ry="3.5" transform="rotate(50 430 45)" />
+    <ellipse class="vine-leaf" cx="510" cy="90" rx="7" ry="3.5" transform="rotate(-10 510 90)" />
+    <ellipse class="vine-leaf" cx="600" cy="35" rx="7" ry="3.5" transform="rotate(65 600 35)" />
+    <ellipse class="vine-leaf" cx="690" cy="100" rx="7" ry="3.5" transform="rotate(-35 690 100)" />
+    <ellipse class="vine-leaf" cx="770" cy="50" rx="7" ry="3.5" transform="rotate(25 770 50)" />
+    <ellipse class="vine-leaf" cx="50" cy="50" rx="7" ry="3.5" transform="rotate(10 50 50)" />
+    <ellipse class="vine-leaf" cx="110" cy="65" rx="7" ry="3.5" transform="rotate(45 110 65)" />
+    <ellipse class="vine-leaf" cx="190" cy="45" rx="7" ry="3.5" transform="rotate(-30 190 45)" />
+    <ellipse class="vine-leaf" cx="270" cy="15" rx="7" ry="3.5" transform="rotate(20 270 15)" />
+    <ellipse class="vine-leaf" cx="310" cy="100" rx="7" ry="3.5" transform="rotate(-60 310 100)" />
+    <ellipse class="vine-leaf" cx="385" cy="40" rx="7" ry="3.5" transform="rotate(40 385 40)" />
+    <ellipse class="vine-leaf" cx="455" cy="70" rx="7" ry="3.5" transform="rotate(-15 455 70)" />
+    <ellipse class="vine-leaf" cx="535" cy="30" rx="7" ry="3.5" transform="rotate(10 535 30)" />
+    <ellipse class="vine-leaf" cx="570" cy="80" rx="7" ry="3.5" transform="rotate(55 570 80)" />
+    <ellipse class="vine-leaf" cx="660" cy="15" rx="7" ry="3.5" transform="rotate(-40 660 15)" />
+    <ellipse class="vine-leaf" cx="735" cy="45" rx="7" ry="3.5" transform="rotate(30 735 45)" />
+    <ellipse class="vine-leaf" cx="60" cy="20" rx="7" ry="3.5" transform="rotate(-25 60 20)" />
+    <ellipse class="vine-leaf" cx="125" cy="85" rx="7" ry="3.5" transform="rotate(15 125 85)" />
+    <ellipse class="vine-leaf" cx="215" cy="35" rx="7" ry="3.5" transform="rotate(50 215 35)" />
+    <ellipse class="vine-leaf" cx="340" cy="10" rx="7" ry="3.5" transform="rotate(-10 340 10)" />
+    <ellipse class="vine-leaf" cx="400" cy="90" rx="7" ry="3.5" transform="rotate(45 400 90)" />
+    <ellipse class="vine-leaf" cx="475" cy="55" rx="7" ry="3.5" transform="rotate(-20 475 55)" />
+    <ellipse class="vine-leaf" cx="555" cy="105" rx="7" ry="3.5" transform="rotate(35 555 105)" />
+    <ellipse class="vine-leaf" cx="625" cy="65" rx="7" ry="3.5" transform="rotate(-50 625 65)" />
+    <ellipse class="vine-leaf" cx="715" cy="25" rx="7" ry="3.5" transform="rotate(20 715 25)" />
+    <ellipse class="vine-leaf" cx="785" cy="85" rx="7" ry="3.5" transform="rotate(-30 785 85)" />
+    <ellipse class="vine-leaf" cx="145" cy="115" rx="7" ry="3.5" transform="rotate(60 145 115)" />
+    <ellipse class="vine-leaf" cx="245" cy="25" rx="7" ry="3.5" transform="rotate(-15 245 25)" />
+    <ellipse class="vine-leaf" cx="495" cy="10" rx="7" ry="3.5" transform="rotate(40 495 10)" />
+    <ellipse class="vine-leaf" cx="585" cy="115" rx="7" ry="3.5" transform="rotate(-45 585 115)" />
+</svg>

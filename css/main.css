@@ -1,0 +1,164 @@
+@import 'base/reset.css';
+@import 'base/typography.css';
+@import 'layout/layout.css';
+@import 'components/card.css';
+@import 'components/skills.css';
+@import 'components/notifications.css';
+@import 'effects/animations.css';
+@import 'effects/vines.css';
+@import 'effects/hero.css';
+
+/* Additional component styles from components.css */
+.glass-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 80px);
+    max-width: 1100px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    z-index: 1000;
+    padding: 15px 40px;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0.9) 10%,
+            rgba(255, 255, 255, 0.4) 20%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+    animation: shine 4s linear infinite;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform: translateY(-2px) scale(1.05);
+    filter: brightness(1.2);
+    letter-spacing: 8px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.9rem;
+    opacity: 0.6;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent);
+    opacity: 1;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.mobile-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 46, 10, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 20px;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.mobile-nav.active {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav li {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.mobile-nav a:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .glass-nav {
+        width: calc(100% - 40px);
+        padding: 10px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .glass-nav {
+        top: 10px;
+        width: calc(100% - 20px);
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+}

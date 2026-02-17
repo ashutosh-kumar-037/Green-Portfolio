@@ -1,0 +1,254 @@
+/* Base Glass Card Style */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 40px;
+    padding: 40px;
+    width: 100%;
+    max-width: 100%;
+    transition: transform 0.1s ease-out, box-shadow 0.3s;
+    transform-style: preserve-3d;
+}
+
+.glass-card:hover {
+    box-shadow: 0 10px 30px rgba(85, 139, 47, 0.1);
+}
+
+/* Project Card Flip Animation Premium Design */
+.project-card-container {
+    perspective: 1500px;
+    height: 480px;
+    width: 100%;
+}
+
+.project-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.project-card-container:hover .project-card-inner {
+    transform: rotateY(180deg);
+}
+
+.project-card-front,
+.project-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 32px;
+    overflow: hidden;
+    border: 1px solid rgba(85, 139, 47, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Front Face Styling */
+.project-card-front {
+    background: #140505; /* Deep base color */
+    display: flex;
+    flex-direction: column;
+    backface-visibility: hidden;
+    transform: rotateY(0deg) translateZ(1px);
+}
+
+.project-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.project-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.project-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(10, 46, 10, 0.1) 0%,
+            rgba(10, 46, 10, 0.4) 60%,
+            rgba(10, 46, 10, 0.9) 100%);
+    z-index: 2;
+}
+
+.project-title-front {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    z-index: 3;
+    background: linear-gradient(to top, rgb(0, 0, 0), transparent);
+    /* backdrop-filter: blur(5px); */
+}
+
+.project-title-front h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+}
+
+.project-title-front .accent-line {
+    width: 40px;
+    height: 4px;
+    background: var(--accent);
+    margin-top: 10px;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.project-card-container:hover .project-title-front .accent-line {
+    width: 80px;
+}
+
+/* Back Face Styling */
+.project-card-back {
+    background: rgba(10, 46, 10, 0.98);
+    transform: rotateY(180deg) translateZ(1px);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--accent);
+    backdrop-filter: blur(20px);
+    backface-visibility: hidden;
+}
+
+.project-card-back::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(85, 139, 47, 0.1) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.project-desc {
+    color: rgba(240, 255, 240, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.tech-tag {
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    background: rgba(85, 139, 47, 0.1);
+    color: var(--accent);
+    border: 1px solid rgba(85, 139, 47, 0.3);
+    font-family: 'Fira Code', monospace;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    background: var(--accent);
+    color: var(--primary);
+    box-shadow: 0 0 15px rgba(85, 139, 47, 0.4);
+}
+
+/* Action Buttons (GitHub/Live) */
+.project-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.btn-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.btn-icon:hover {
+    background: var(--accent);
+    color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(85, 139, 47, 0.3);
+}
+
+/* Shine Animation on Faces */
+.project-card-front::after,
+.project-card-back::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent);
+    transform: skewX(-25deg);
+    transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.project-card-container:hover .project-card-front::after,
+.project-card-container:hover .project-card-back::after {
+    left: 150%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .glass-card {
+        padding: 30px 20px;
+    }
+
+    .project-card-container {
+        height: 420px;
+    }
+
+    .project-card-back {
+        padding: 30px;
+    }
+
+    .project-title-front h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .glass-card {
+        padding: 25px 15px;
+    }
+}
