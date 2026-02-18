@@ -1,4 +1,5 @@
 function initContactForm() {
+    console.log('Contact Form Initialized (v2.1 - Centered Layout & Fixes)');
     const form = document.getElementById('contact-form');
     const submitBtn = document.getElementById('contact-submit');
     const submitText = document.getElementById('submit-text');
@@ -24,10 +25,44 @@ function initContactForm() {
         submitBtn.style.cursor = 'not-allowed';
 
         const formData = new FormData(form);
-        const object = Object.fromEntries(formData);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const message = formData.get('message');
 
-        // Add access key from config
-        object.access_key = accessKey;
+        // Create a more structured, premium-looking message for the email body
+        // Uses Unicode characters to create a balanced, professional report layout
+        // Create the message using an array to COMPLETELY avoid any indentation issues
+        // Use standard characters and a small margin to ensure centering/balance
+        const margin = "  "; // 2 spaces for a clean left margin
+        const messageLines = [
+
+            margin + "🌱 NEW MESSAGE: GREEN PORTFOLIO",
+            margin + "_______________________________________",
+            "",
+            margin + "👤 SENDER DETAILS",
+            margin + "_______________________________________",
+            margin + `Name:  ${name}`,
+            margin + `Email: ${email}`,
+            margin + `Date:  ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`,
+            "",
+            margin + "💬 MESSAGE CONTENT",
+            margin + "_______________________________________",
+            margin + (message.length > 500 ? message.substring(0, 500) + "..." : message),
+            margin + "_______________________________________",
+            margin + "",
+            margin + "✨ Sent via Green Portfolio Website",
+            margin + "",
+            margin + `📩 REPLY TO: ${email}`
+        ];
+
+        const structuredMessage = messageLines.join('\n');
+
+        const object = {
+            access_key: accessKey,
+            subject: `🌱 New Seed Sown by ${name}`,
+            from_name: `${name} | Green Portfolio`,
+            message: structuredMessage,
+        };
 
         const json = JSON.stringify(object);
 
