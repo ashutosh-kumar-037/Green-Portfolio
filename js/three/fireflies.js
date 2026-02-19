@@ -1,5 +1,5 @@
 let firefliesPointMesh;
-const firefliesCount = 250;
+const firefliesCount = 600;
 const fireflyVelocities = new Float32Array(firefliesCount * 3);
 const fireflyPhases = new Float32Array(firefliesCount);
 const fireflyBlinkSpeeds = new Float32Array(firefliesCount);
@@ -10,9 +10,9 @@ const createGlowTexture = () => {
     canvas.height = 64;
     const ctx = canvas.getContext('2d');
     const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
-    gradient.addColorStop(0, 'rgba(255, 255, 255, 0.8)');
-    gradient.addColorStop(0.2, 'rgba(180, 235, 100, 0.5)');
-    gradient.addColorStop(0.5, 'rgba(180, 235, 100, 0.2)');
+    gradient.addColorStop(0, 'rgba(255, 255, 255, 1.0)');
+    gradient.addColorStop(0.2, 'rgba(180, 235, 100, 0.8)');
+    gradient.addColorStop(0.5, 'rgba(180, 235, 100, 0.4)');
     gradient.addColorStop(1, 'rgba(180, 235, 100, 0)');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, 64, 64);
@@ -25,27 +25,27 @@ function initFireflies() {
     const fireflyColors = new Float32Array(firefliesCount * 3);
 
     for (let i = 0; i < firefliesCount; i++) {
-        fireflyPositions[i * 3] = (Math.random() - 0.5) * 60;
-        fireflyPositions[i * 3 + 1] = Math.random() * 140 - 80;
-        fireflyPositions[i * 3 + 2] = (Math.random() - 0.5) * 40;
+        fireflyPositions[i * 3] = (Math.random() - 0.5) * 80;
+        fireflyPositions[i * 3 + 1] = Math.random() * 160 - 80;
+        fireflyPositions[i * 3 + 2] = (Math.random() - 0.5) * 50;
 
         fireflyVelocities[i * 3] = (Math.random() - 0.5) * 0.02;
         fireflyVelocities[i * 3 + 1] = (Math.random() - 0.5) * 0.02;
         fireflyVelocities[i * 3 + 2] = (Math.random() - 0.5) * 0.01;
 
         fireflyPhases[i] = Math.random() * Math.PI * 2;
-        fireflyBlinkSpeeds[i] = 1.2 + Math.random() * 2.5;
+        fireflyBlinkSpeeds[i] = 1.0 + Math.random() * 2.0;
     }
 
     firefliesGeometry.setAttribute('position', new THREE.BufferAttribute(fireflyPositions, 3));
     firefliesGeometry.setAttribute('color', new THREE.BufferAttribute(fireflyColors, 3));
 
     const firefliesMaterial = new THREE.PointsMaterial({
-        size: 0.35,
+        size: 0.45,
         map: createGlowTexture(),
         vertexColors: true,
         transparent: true,
-        opacity: 0.7,
+        opacity: 0.8,
         blending: THREE.AdditiveBlending,
         depthWrite: false
     });
