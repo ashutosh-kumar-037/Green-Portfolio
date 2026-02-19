@@ -49,16 +49,16 @@ function initEducation() {
         }
 
         html += `
-            <div class="edu-item ${isLast ? 'border-l-0' : 'border-l-4 border-accent/60'} ml-4 pl-8 md:pl-12 relative ${isLast ? '' : 'pb-8'}">
+            <div class="edu-item ${isLast ? 'border-l-0' : 'border-l-4 border-accent/60'} ml-2 pl-6 md:pl-12 relative ${isLast ? '' : 'pb-4 md:pb-8'}">
                 <div class="absolute flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-lg bg-accent 
                     ${isLast ? '-left-[14px] md:-left-[18px]' : '-left-[18px] md:-left-[22px]'} top-0 z-10 edu-icon-pulse">
                     <img src="assets/icons/${item.icon}" class="w-5 h-5 md:w-6 md:h-6 invert opacity-80" alt="${item.title}">
                 </div>
                 <div class="flex flex-col md:flex-row md:justify-between md:items-start w-full gap-1 md:gap-4">
-                    <h3 class="accent text-lg md:text-xl font-bold leading-tight">${item.title}</h3>
-                    <span class="text-text opacity-60 text-xs md:text-sm font-semibold whitespace-nowrap">${item.period}</span>
+                    <h3 class="accent text-sm md:text-xl font-bold leading-tight">${item.title}</h3>
+                    <span class="text-text opacity-60 text-[10px] md:text-sm font-semibold whitespace-nowrap">${item.period}</span>
                 </div>
-                <p class="text-text opacity-80 text-sm md:text-base mt-2 md:mt-0">${item.institution}</p>
+                <p class="text-text opacity-80 text-xs md:text-base mt-2 md:mt-0">${item.institution}</p>
                 ${item.status ? `<p class="text-text opacity-70 font-semibold mt-1">${item.status}</p>` : ''}
                 ${scoreHTML ? `<div class="mt-1">${scoreHTML}</div>` : ''}
             </div>

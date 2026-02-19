@@ -1,20 +1,29 @@
 #main-container {
-    max-width: 1100px;
+    width: 90%;
+    max-width: 60.5rem;
+    /* 1000px */
     margin: 0 auto;
     position: relative;
-    padding: 0 40px;
+    padding: 0 2.5rem;
     min-height: 100vh;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
+
+    /* 768px */
     #main-container {
-        padding: 0 20px;
+        padding: 0 0.75rem;
+        /* Reduced from 1.25rem */
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
+
+    /* 480px */
     #main-container {
-        padding: 0 15px;
+        width: 95%;
+        /* Make container wider on mobile */
+        padding: 0 0.25rem;
     }
 }
 
@@ -25,7 +34,7 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: radial-gradient(circle at center, #0e2a0e 0%, #051405 100%);
+    background: radial-gradient(circle at center, #0a200a 0%, #040c04 100%);
 }
 
 .section {
@@ -34,38 +43,40 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 100px 0;
+    padding: 5vh 0;
+    /* Use vh for consistent vertical padding */
     position: relative;
     width: 100%;
+}
+
+#home {
+    justify-content: flex-start;
+    /* Title starts from a fixed point */
 }
 
 .section-title {
     font-size: 3rem;
     font-weight: 500;
-    margin-bottom: 50px;
+    margin-bottom: 3.125rem;
     text-align: center;
     width: 100%;
     color: var(--accent);
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 0.3125rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
     .section-title {
         font-size: 2rem;
-        letter-spacing: 3px;
+        letter-spacing: 0.1875rem;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
     .section-title {
         font-size: 1.6rem;
-        letter-spacing: 2px;
-        margin-bottom: 30px;
-    }
-
-    body {
-        font-size: 14px;
+        letter-spacing: 0.125rem;
+        margin-bottom: 1.875rem;
     }
 
     p {
@@ -82,6 +93,6 @@
     }
 
     .section {
-        padding: 60px 0;
+        padding: 3.75rem 0;
     }
 }

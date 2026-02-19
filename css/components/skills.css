@@ -1,7 +1,7 @@
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+    gap: 1.25rem;
     width: 100%;
 }
 
@@ -9,20 +9,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    padding: 30px;
+    gap: 0.9375rem;
+    padding: 1.875rem;
     text-align: center;
 }
 
 .skill-item i {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     color: var(--accent);
 }
 
 .skill-progress-bar {
     background: linear-gradient(90deg, var(--accent), #a2d149);
-    box-shadow: 0 0 10px rgba(85, 139, 47, 0.4);
+    box-shadow: 0 0 0.625rem rgba(85, 139, 47, 0.4);
 }
 
 .skill-tab.active {

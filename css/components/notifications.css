@@ -1,31 +1,31 @@
 /* Notification Toast System */
 .toast-container {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 1.875rem;
+    right: 1.875rem;
     z-index: 9999;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 0.9375rem;
     pointer-events: none;
 }
 
 .toast {
     background: rgba(10, 46, 10, 0.85);
     /* primary with transparency */
-    backdrop-filter: blur(15px);
-    border: 1px solid var(--glass-border);
-    padding: 16px 24px;
-    border-radius: 16px;
+    backdrop-filter: blur(0.9375rem);
+    border: 0.0625rem solid var(--glass-border);
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0.9375rem;
     color: var(--text);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.3);
     pointer-events: auto;
     transform: translateX(120%);
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    min-width: 300px;
+    min-width: 18.75rem;
 }
 
 .toast.show {
@@ -33,11 +33,11 @@
 }
 
 .toast-success {
-    border-left: 4px solid var(--accent);
+    border-left: 0.25rem solid var(--accent);
 }
 
 .toast-error {
-    border-left: 4px solid #ff4444;
+    border-left: 0.25rem solid #ff4444;
 }
 
 .toast i {
@@ -60,14 +60,14 @@
 
 /* Animations for Lucide icons */
 .lucide-icon {
-    width: 22px;
-    height: 22px;
+    width: 1.375rem;
+    height: 1.375rem;
 }
 
 @keyframes toast-in {
     from {
         opacity: 0;
-        transform: translateY(20px) scale(0.9);
+        transform: translateY(1.25rem) scale(0.9);
     }
 
     to {
@@ -76,11 +76,13 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
+
+    /* 480px */
     .toast-container {
-        bottom: 20px;
-        right: 20px;
-        left: 20px;
+        bottom: 1.25rem;
+        right: 1.25rem;
+        left: 1.25rem;
     }
 
     .toast {

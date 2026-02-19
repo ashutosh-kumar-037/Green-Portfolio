@@ -42,7 +42,7 @@ function initLaptopBurst() {
 
     function createSingleIcon() {
         if (!document.getElementById('laptop-burst-source')) return;
-        const colors = ['#558B2F', '#81C784', '#FFD54F', '#4FC3F7', '#BA68C8', '#FF8A65', '#EF5350'];
+        const colors = ['#4A7A28', '#81C784', '#FFD54F', '#4FC3F7', '#BA68C8', '#FF8A65', '#EF5350'];
         const iconName = allIcons[Math.floor(Math.random() * allIcons.length)];
         const color = colors[Math.floor(Math.random() * colors.length)];
         const burstEl = document.createElement('div');

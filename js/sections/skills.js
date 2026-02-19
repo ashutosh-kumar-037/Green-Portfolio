@@ -119,8 +119,8 @@ function updateRadarChart(data) {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     const gradient = ctx.createRadialGradient(150, 150, 0, 150, 150, 150);
-    gradient.addColorStop(0, 'rgba(124, 179, 66, 0.8)');
-    gradient.addColorStop(1, 'rgba(56, 142, 60, 0.9)');
+    gradient.addColorStop(0, 'rgba(74, 122, 40, 0.6)');
+    gradient.addColorStop(1, 'rgba(30, 60, 20, 0.8)');
 
     if (skillsChart) {
         skillsChart.data.datasets[0].data = data.values.map(() => 0);
@@ -138,10 +138,10 @@ function updateRadarChart(data) {
                     label: 'Proficiency',
                     data: data.values,
                     backgroundColor: gradient,
-                    borderColor: '#558B2F',
+                    borderColor: '#4A7A28',
                     borderWidth: 3,
                     pointBackgroundColor: '#fff',
-                    pointBorderColor: '#558B2F',
+                    pointBorderColor: '#4A7A28',
                     pointRadius: 4
                 }]
             },

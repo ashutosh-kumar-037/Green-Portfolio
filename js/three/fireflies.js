@@ -10,10 +10,10 @@ const createGlowTexture = () => {
     canvas.height = 64;
     const ctx = canvas.getContext('2d');
     const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
-    gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
-    gradient.addColorStop(0.2, 'rgba(255, 235, 59, 0.8)');
-    gradient.addColorStop(0.5, 'rgba(255, 235, 59, 0.3)');
-    gradient.addColorStop(1, 'rgba(255, 235, 59, 0)');
+    gradient.addColorStop(0, 'rgba(255, 255, 255, 0.8)');
+    gradient.addColorStop(0.2, 'rgba(180, 235, 100, 0.5)');
+    gradient.addColorStop(0.5, 'rgba(180, 235, 100, 0.2)');
+    gradient.addColorStop(1, 'rgba(180, 235, 100, 0)');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, 64, 64);
     return new THREE.CanvasTexture(canvas);
@@ -41,11 +41,11 @@ function initFireflies() {
     firefliesGeometry.setAttribute('color', new THREE.BufferAttribute(fireflyColors, 3));
 
     const firefliesMaterial = new THREE.PointsMaterial({
-        size: 0.45,
+        size: 0.35,
         map: createGlowTexture(),
         vertexColors: true,
         transparent: true,
-        opacity: 0.8,
+        opacity: 0.7,
         blending: THREE.AdditiveBlending,
         depthWrite: false
     });
@@ -70,7 +70,7 @@ function updateFireflies(time) {
         if (ffPos[i * 3 + 1] < -80) ffPos[i * 3 + 1] = 60;
 
         const pulse = (Math.sin(time * fireflyBlinkSpeeds[i] + fireflyPhases[i]) + 1) / 2;
-        const brightness = 0.3 + pulse * 0.7;
+        const brightness = 0.25 + pulse * 0.5;
 
         ffCol[i * 3] = brightness * 1.0;
         ffCol[i * 3 + 1] = brightness * 0.95;
