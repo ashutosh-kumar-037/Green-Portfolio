@@ -6,6 +6,7 @@ function initApp() {
 
     // UI components that don't depend on title SVGs
     initMobileMenu();
+    initProfileModal();
     initScrollLogic();
     initCardEffects();
     initSkillsSystem();

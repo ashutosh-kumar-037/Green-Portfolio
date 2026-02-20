@@ -2,6 +2,9 @@ function initCardEffects() {
     // Individual Card Tilt on Hover
     document.querySelectorAll('.glass-card').forEach(card => {
         card.addEventListener('mousemove', (e) => {
+            // Skip tilt effect for profile modal card to avoid animation conflicts
+            if (card.closest('#profile-card-modal')) return;
+
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;

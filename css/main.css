@@ -22,19 +22,210 @@
     border: 0.0625rem solid var(--glass-border);
     border-radius: 3.125rem;
     z-index: 1000;
-    padding: 0.9375rem 2.5rem;
+    padding: 0.3rem 1.5rem 0.3rem 0.3rem;
+    /* Top Right Bottom Left */
 }
 
 .nav-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-logo-wrapper {
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--secondary);
+    z-index: 2;
+    position: relative;
+}
+
+.profile-logo-wrapper:hover {
+    transform: scale(0.9);
+}
+
+.pulse-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid rgba(129, 214, 69, 0.8);
+    background: rgba(129, 214, 69, 0.05);
+    opacity: 0;
+    animation: rippleSync 3s infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.droplets-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.droplet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: radial-gradient(circle, #fff 0%, var(--accent) 80%);
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    animation: splashSync 3s infinite;
+}
+
+.d1 {
+    --tx: -25px;
+    --ty: -20px;
+    animation-delay: 0s;
+}
+
+.d2 {
+    --tx: 25px;
+    --ty: -25px;
+    animation-delay: 0s;
+}
+
+.d3 {
+    --tx: -20px;
+    --ty: 25px;
+    animation-delay: 0s;
+}
+
+.d4 {
+    --tx: 25px;
+    --ty: 20px;
+    animation-delay: 0s;
+}
+
+@keyframes splashSync {
+
+    0%,
+    45% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+
+    48% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    65%,
+    100% {
+        transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes rippleSync {
+
+    0%,
+    45% {
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+    }
+
+    46% {
+        opacity: 0.6;
+    }
+
+    75% {
+        width: 300%;
+        height: 300%;
+        opacity: 0;
+    }
+
+    100% {
+        width: 300%;
+        height: 300%;
+        opacity: 0;
+    }
+}
+
+.click-guide {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    color: #a6a7aa;
+    /* Grey-300 */
+    z-index: 10;
+    pointer-events: none;
+    animation: clickHint 3s ease-in-out infinite;
+    /* filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.2)); */
+}
+
+.click-guide i {
+    width: 14px;
+    height: 14px;
+}
+
+@keyframes clickHint {
+
+    0%,
+    100% {
+        transform: translate(10px, 10px) scale(1);
+        opacity: 0;
+    }
+
+    10%,
+    90% {
+        opacity: 1;
+    }
+
+    30% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    45% {
+        transform: translate(0, 0) scale(0.7);
+    }
+
+    55% {
+        transform: translate(0, 0) scale(1.1);
+    }
+
+    65% {
+        transform: translate(0, 0) scale(1);
+    }
 }
 
 .logo {
-    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    line-height: 1;
+    font-size: 1rem;
     font-weight: 800;
-    letter-spacing: 0.1875rem;
+    letter-spacing: 0.1rem;
     background: linear-gradient(to right,
             rgba(255, 255, 255, 0.4) 0%,
             rgba(255, 255, 255, 0.9) 10%,
@@ -206,7 +397,7 @@
 
     .glass-nav {
         width: calc(100% - 2.5rem);
-        padding: 0.625rem 1.5625rem;
+        padding: 0.3rem 1.5rem 0.3rem 0.3rem;
     }
 }
 
@@ -214,11 +405,174 @@
     .glass-nav {
         top: 0.625rem;
         width: calc(100% - 1.25rem);
-        padding: 0.625rem 0.9375rem;
+        padding: 0.3rem 1rem 0.3rem 0.3rem;
     }
 
     .logo {
-        font-size: 1rem;
-        letter-spacing: 0.125rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.05rem;
     }
+
+    .profile-logo-wrapper {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .nav-left {
+        gap: 0.75rem;
+    }
+}
+
+/* Profile Modal Styles */
+.profile-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.profile-modal-overlay {
+    position: fixed;
+    /* Changed from absolute for better scroll handling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    /* Slightly darker for better contrast */
+    backdrop-filter: blur(5px);
+    z-index: 10;
+}
+
+.profile-card-content {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    padding: 2.5rem;
+    text-align: center;
+    will-change: transform, opacity;
+    z-index: 20;
+    /* Explicitly on top of overlay */
+    background: rgba(10, 30, 10, 0.95);
+    /* More solid background for high-end look */
+    border: 1px solid rgba(129, 214, 69, 0.3);
+    /* Transformation handled by GSAP in navbar.js */
+}
+
+.close-profile {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: none;
+    border: none;
+    color: var(--text);
+    opacity: 0.5;
+    cursor: pointer;
+    /* Transition removed to prevent GSAP conflicts */
+}
+
+.close-profile:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+.profile-card-img-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.profile-card-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-card-name {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.profile-card-role {
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.profile-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.profile-info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text);
+    opacity: 0.8;
+}
+
+.profile-info-item i {
+    color: var(--accent);
+    width: 1.25rem;
+}
+
+.profile-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.profile-btn-primary {
+    background: var(--accent);
+    color: var(--primary);
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.profile-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(74, 122, 40, 0.3);
+}
+
+.profile-socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.profile-socials a {
+    color: var(--text);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.profile-socials a:hover {
+    color: var(--accent);
+    opacity: 1;
+    transform: translateY(-3px);
 }

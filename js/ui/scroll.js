@@ -2,7 +2,10 @@ function initScrollLogic() {
     gsap.registerPlugin(ScrollTrigger);
 
     // Enhanced Card Transitions (Entry/Exit with Blur)
-    gsap.utils.toArray('.glass-card').forEach((card) => {
+    gsap.utils.toArray('.section .glass-card, .hero-split .glass-card').forEach((card) => {
+        // Skip profile modal card to prevent scroll-induced blur/hiding
+        if (card.closest('#profile-card-modal')) return;
+
         gsap.set(card, {
             filter: "blur(15px)",
             opacity: 0,
@@ -92,7 +95,8 @@ function initScrollLogic() {
             mainVineMesh.geometry.setDrawRange(0, Math.floor(scrollPercent * totalIndices));
         }
 
-        camera.position.y = -scrollPercent * 60 + 5;
+        // Removed camera scroll to keep fireflies static
+        // camera.position.y = -scrollPercent * 60 + 5;
 
         flowerMeshes.forEach(f => {
             if (scrollPercent >= f.t) {

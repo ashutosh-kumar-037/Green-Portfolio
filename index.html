@@ -40,9 +40,64 @@
 <body>
     <div id="bg-canvas-container"></div>
 
+    <!-- Profile Card Modal -->
+    <div id="profile-card-modal" class="profile-modal">
+        <div class="profile-modal-overlay"></div>
+        <div class="profile-card-content profile-glass-card">
+            <div class="profile-header">
+                <div class="profile-card-img-wrapper">
+                    <img src="assets/images/avatar.png" alt="Ashutosh Kumar" class="profile-card-img">
+                </div>
+                <h2 class="profile-card-name">Ashutosh <span class="accent">Kumar</span></h2>
+                <p class="profile-card-role">Fullstack Developer</p>
+            </div>
+            <div class="profile-body">
+                <div class="profile-info-item">
+                    <i data-lucide="graduation-cap"></i>
+                    <span>MCA Student @ GEU</span>
+                </div>
+                <div class="profile-info-item">
+                    <i data-lucide="map-pin"></i>
+                    <span>Dehradun, India</span>
+                </div>
+                <div class="profile-info-item">
+                    <i data-lucide="code-2"></i>
+                    <span>DSA & Web Enthusiast</span>
+                </div>
+                <div class="profile-info-item">
+                    <i data-lucide="mail"></i>
+                    <span>ashutosharyan037@gmail.com</span>
+                </div>
+            </div>
+            <div class="profile-footer">
+                <a href="#contact" class="profile-btn-primary">Get In Touch</a>
+                <div class="profile-socials">
+                    <a href="https://github.com/ashutosh-kumar-037" target="_blank"><i data-lucide="github"></i></a>
+                    <a href="https://www.linkedin.com/in/ashutosh-kumar-917390239/" target="_blank"><i
+                            data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <nav class="glass-nav">
         <div class="nav-content">
-            <div class="logo">PORTFOLIO</div>
+            <div class="nav-left">
+                <div class="profile-logo-wrapper" id="profile-trigger">
+                    <img src="assets/images/avatar.png" alt="Ashutosh" class="nav-profile-img">
+                    <div class="pulse-ring"></div>
+                    <div class="droplets-container">
+                        <div class="droplet d1"></div>
+                        <div class="droplet d2"></div>
+                        <div class="droplet d3"></div>
+                        <div class="droplet d4"></div>
+                    </div>
+                    <div class="click-guide">
+                        <i data-lucide="mouse-pointer-2"></i>
+                    </div>
+                </div>
+                <div class="logo">PORTFOLIO</div>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>

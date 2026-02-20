@@ -3,7 +3,7 @@
 Thumbs.db
 
 # User Configurations (Sensitive)
-js/core/config.js
+# js/core/config.js 
 
 # Node modules (if any)
 node_modules/
