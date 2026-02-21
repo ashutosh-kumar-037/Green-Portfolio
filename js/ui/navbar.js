@@ -68,10 +68,10 @@ function initProfileModal() {
         gsap.set(content, {
             x: dx,
             y: dy,
-            scale: 0.1, // Start slightly bigger for a better grow effect
+            scale: 0.2,
             opacity: 0,
-            rotate: -12,
-            filter: "blur(10px)", // Add initial blur for soft emergence
+            rotate: -8,
+            filter: "blur(5px)",
             pointerEvents: 'none'
         });
 
@@ -86,8 +86,8 @@ function initProfileModal() {
 
         tl.to(overlay, {
             opacity: 1,
-            duration: 0.5,
-            ease: "power2.inOut"
+            duration: 0.4,
+            ease: "power2.out"
         })
             .to(content, {
                 x: 0,
@@ -95,10 +95,10 @@ function initProfileModal() {
                 scale: 1,
                 opacity: 1,
                 rotate: 0,
-                filter: "blur(0px)", // Fade out blur during animation
-                duration: 0.9,
-                ease: "back.out(1.4)" // Soft but responsive overshoot
-            }, "-=0.3");
+                filter: "blur(0px)",
+                duration: 0.65,
+                ease: "back.out(1.1)"
+            }, "-=0.25");
     };
 
     const closeModal = () => {
@@ -128,21 +128,21 @@ function initProfileModal() {
         tl.to(content, {
             x: dx,
             y: dy,
-            scale: 0,
+            scale: 0.2,
             opacity: 0,
-            rotate: 15,
-            duration: 0.6,
+            rotate: 10,
+            duration: 0.4,
             ease: "power2.in"
         })
             .to(overlay, {
                 opacity: 0,
-                duration: 0.4,
+                duration: 0.3,
                 ease: "power2.inOut"
-            }, "-=0.4")
+            }, "-=0.3")
             .to(modal, {
                 opacity: 0,
-                duration: 0.2
-            }, "-=0.2");
+                duration: 0.15
+            }, "-=0.15");
     };
 
     trigger.addEventListener('click', openModal);

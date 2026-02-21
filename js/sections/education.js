@@ -1,13 +1,13 @@
 const educationData = [
     {
-        title: "MCA (Master of Computer Applications)",
+        title: "Master of Computer Applications",
         period: "2024-2026",
         institution: "Graphic Era University, Dehradun, Uttarakhand",
         status: "Currently Pursuing...",
         icon: "open-book.svg"
     },
     {
-        title: "BCA (Bachelor of Computer Applications)",
+        title: "Bachelor of Computer Applications",
         period: "2021-2024",
         institution: "Patliputra University, Patna, Bihar",
         score: "Percentage: 71.2%",

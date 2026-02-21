@@ -95,8 +95,13 @@ function initScrollLogic() {
             mainVineMesh.geometry.setDrawRange(0, Math.floor(scrollPercent * totalIndices));
         }
 
-        // Removed camera scroll to keep fireflies static
-        // camera.position.y = -scrollPercent * 60 + 5;
+        // Camera scroll to make 3D scene follow page scroll
+        camera.position.y = -scrollPercent * 60 + 5;
+
+        // Keep fireflies fixed to the viewport by moving them with the camera
+        if (typeof firefliesPointMesh !== 'undefined' && firefliesPointMesh) {
+            firefliesPointMesh.position.y = -scrollPercent * 60;
+        }
 
         flowerMeshes.forEach(f => {
             if (scrollPercent >= f.t) {
